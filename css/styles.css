@@ -56,10 +56,6 @@ h1 {
     
     background-position: center;
     background-size: cover;
-    
-    border: 1px solid #000;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    
 }
 
 .h1-button {
@@ -70,9 +66,6 @@ h1 {
     display: block;
     padding: 16px 32px;
     border: none;
-    /* border: 1px solid #000; -> залишив бо в макеті є */
-    /* border-radius: 4px; */
-    /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15); */
     margin: 0 auto;
 }
 
@@ -86,7 +79,7 @@ h2 {
 }
 
 h3 {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
@@ -176,7 +169,6 @@ ul, ol {
 .header-nav {
     font-weight: 500;
     display: flex;
-    
 }
 
 .header-menu-link {
@@ -210,7 +202,10 @@ ul, ol {
 
 
 .adress-opt-items a {
-    color: var(--clr-slate);   
+    color: var(--clr-slate);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-opt a:hover,
@@ -405,7 +400,6 @@ ul, ol {
     transition-property: color, background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
 
 .footer-socials-icon,
@@ -479,11 +473,6 @@ ul, ol {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .customers-icon:focus,
-.customers-icon:hover {
-    border-color: var(--clr-ocean);
-    fill: var(--clr-ocean);
-} */
 
 .customers-icon {
     display: inline-flex;
@@ -526,20 +515,27 @@ ul, ol {
     background: var(--clr-iris);
     padding: 40px 32px;
 
-    transition-property: transform;
+    transition-property: transform, box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-    
 }
 
-.types-item:focus .overlay {
-    transform: translateY(0);
-    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+
+.types-item-link {
+    display: block;
+    transition-property: transform, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.types-item:focus .overlay,
 .types-item:hover .overlay {
     transform: translateY(0);
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+} 
+
+.types-item-link:focus,
+.types-item-link:hover {
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
@@ -565,7 +561,6 @@ ul, ol {
 }
 
 .modal {
-    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -607,6 +602,10 @@ ul, ol {
     stroke: rgba(0, 0, 0, 0.1);
 
     padding: 0;
+
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn:hover,
